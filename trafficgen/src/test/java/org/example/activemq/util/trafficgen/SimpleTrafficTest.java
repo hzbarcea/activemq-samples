@@ -39,8 +39,7 @@ import static org.example.activemq.util.trafficgen.TrafficHelper.copies;
 public class SimpleTrafficTest extends CamelTestSupport {
     private static final boolean LOCAL_BROKER = true;
     private static BrokerService broker;
-    private static String bindAddress = "tcp://localhost:60000";
-    // private static String bindAddress = ActiveMQConnectionFactory.DEFAULT_BROKER_BIND_URL;
+    private static String bindAddress = ActiveMQConnectionFactory.DEFAULT_BROKER_BIND_URL;
 
     private static final int QCOUNT = 20;
     private static final String[] QUEUES = { "Q1", "Q2", "Q3", "Q4", "Q5" };
@@ -182,17 +181,10 @@ public class SimpleTrafficTest extends CamelTestSupport {
     public static BrokerService createBroker() throws Exception {
         BrokerService b = null;
         if (LOCAL_BROKER) {
-            b = BrokerFactory.createBroker("broker:(" + bindAddress + ")/EXAMPLE");
-            configureBroker(b);
+            b = BrokerFactory.createBroker("broker:(" + bindAddress + ")/EXAMPLE?persistent=false&useJmx=false&deleteAllMessagesOnStartup=true");
             b.start();
         }
         return b;
-    }
-
-    public static void configureBroker(BrokerService answer) throws Exception {
-        // Extra configuration
-        answer.setPersistent(false);
-        answer.setDeleteAllMessagesOnStartup(true);
     }
 
 }
