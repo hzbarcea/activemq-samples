@@ -23,11 +23,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example.activemq</groupId>
-  <artifactId>util</artifactId>
+  <artifactId>parent</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
-  <name>ActiveMQ :: Examples :: Util</name>
-  <description>Message Queueing Utilities</description>
+  <name>ActiveMQ :: Examples :: Samples</name>
+  <description>Message Queueing Samples</description>
 
   <properties>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -57,7 +57,7 @@
   </properties>
 
   <modules>
-    <module>trafficgen</module>
+    <module>util</module>
   </modules>
 
   <dependencyManagement>
