@@ -59,6 +59,7 @@
   <modules>
     <module>plugins</module>
     <module>util</module>
+    <module>itest</module>
   </modules>
 
   <dependencyManagement>
