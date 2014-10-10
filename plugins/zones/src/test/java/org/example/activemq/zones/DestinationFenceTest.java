@@ -17,21 +17,10 @@
 package org.example.activemq.zones;
 
 
-import java.io.File;
-import java.io.IOException;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
 import java.util.ArrayList;
-
-import javax.management.MBeanServer;
-import javax.management.MBeanServerFactory;
-import javax.management.remote.JMXConnectorServer;
-import javax.management.remote.JMXConnectorServerFactory;
-import javax.management.remote.JMXServiceURL;
 
 import org.apache.activemq.broker.BrokerFactory;
 import org.apache.activemq.broker.BrokerService;
-import org.apache.activemq.broker.jmx.ManagementContext;
 import org.apache.activemq.web.RemoteJMXBrokerFacade;
 import org.apache.activemq.web.config.SystemPropertiesConfiguration;
 import org.junit.AfterClass;
@@ -42,11 +31,7 @@ import org.junit.Test;
 
 public class DestinationFenceTest {
     private static final int PORT_START = 61660;
-    private static final int JMX_OFFSET = 1000;
-    private static ArrayList<BrokerService> BROKERS = new ArrayList<BrokerService>();
-
-    private static final int QCOUNT = 20;
-    private static final String[] QUEUES = { "Q1", "Q2", "Q3", "Q4", "Q5" };
+    private static final ArrayList<BrokerService> BROKERS = new ArrayList<BrokerService>();
 
 
     @BeforeClass

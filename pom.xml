@@ -34,6 +34,7 @@
 
     <activemq.version>5.10.0</activemq.version>
     <camel.version>2.12.2</camel.version>
+    <cxf.version>3.0.1</cxf.version>
     <jetty.version>7.6.9.v20130131</jetty.version>
     <junit.version>4.11</junit.version>
     <karaf.version>2.3.3</karaf.version>
