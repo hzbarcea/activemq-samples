@@ -139,13 +139,33 @@
         <version>${cxf.version}</version>
         <executions>
           <execution>
-            <id>generate-sources</id>
+            <id>generate-api</id>
             <phase>generate-sources</phase>
             <configuration>
               <sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
               <wadlOptions>
                 <wadlOption>
                   <wadl>${basedir}/src/main/resources/wadl/orbweaver.wadl</wadl>
+                  <impl>true</impl>
+                  <packagename>org.example.activemq.orbweaver.api</packagename>
+                  <schemaPackagenames>
+                    <schemaPackagename>http://activemq.example.org/orbweaver=org.example.activemq.orbweaver.api</schemaPackagename>
+                  </schemaPackagenames>
+                </wadlOption>
+              </wadlOptions>
+            </configuration>
+            <goals>
+              <goal>wadl2java</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>generate-cc</id>
+            <phase>generate-sources</phase>
+            <configuration>
+              <sourceRoot>${basedir}/target/generated/src/main/java</sourceRoot>
+              <wadlOptions>
+                <wadlOption>
+                  <wadl>${basedir}/src/main/resources/wadl/orbweaver-cc.wadl</wadl>
                   <impl>true</impl>
                   <packagename>org.example.activemq.orbweaver.api</packagename>
                   <schemaPackagenames>

@@ -25,6 +25,25 @@
   <xs:complexType name="nodeType">
     <xs:sequence>
       <xs:element name="id" type="xs:string" />
+      <xs:element name="name" type="xs:string" />
+      <xs:element name="region" type="xs:string" />
+      <xs:element name="persistence" type="xs:string" />
+      <xs:element name="protocols" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="link" type="tns:linkType" />
+  <xs:complexType name="linkType">
+    <xs:sequence>
+      <xs:element name="from" type="xs:string" />
+      <xs:element name="to" type="xs:string" />
+      <xs:element name="duplex" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="subscription" type="tns:subscriptionType" />
+  <xs:complexType name="subscriptionType">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
 
