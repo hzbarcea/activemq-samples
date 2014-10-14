@@ -17,22 +17,40 @@
   specific language governing permissions and limitations
   under the License.
 -->
-<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+<application xmlns="http://wadl.dev.java.net/2009/02" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:ow="http://activemq.example.org/orbweaver">
 
   <grammars>
-    <include href="schemas/orbweaver-node.xsd" />
+    <include href="schemas/orbweaver-broker.xsd" />
   </grammars>
 
   <resources base="http://localhost:8080/">
     <resource path="/" id="{api.orbweaver.activemq.example.org}ControlCenter">
-      <resource path="/node/{nodeid}">
-        <param name="nodeid" style="template" type="xs:string"/>
-        <method name="POST" id="addNode">
+      <resource path="brokers">
+        <method name="GET" id="showBrokers">
+          <response>
+            <representation mediaType="application/json" element="ow:brokers" />
+          </response>
+        </method>
+      </resource>
+
+      <resource path="broker/{brokerid}">
+        <param name="brokerid" style="template" type="xs:string"/>
+
+        <method name="GET" id="showBroker">
+          <response>
+            <representation mediaType="application/json" element="ow:broker" />
+          </response>
+        </method>
+
+        <method name="PUT" id="updateBroker">
           <request>
-            <representation mediaType="application/xml" element="ow:node"/>
+            <representation mediaType="application/json" element="ow:broker" />
           </request>
         </method>
+
+        <method name="DELETE" id="deleteBroker" />
       </resource>
     </resource>
   </resources>

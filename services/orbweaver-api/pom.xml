@@ -146,7 +146,7 @@
               <wadlOptions>
                 <wadlOption>
                   <wadl>${basedir}/src/main/resources/wadl/orbweaver.wadl</wadl>
-                  <impl>true</impl>
+                  <impl>false</impl>
                   <packagename>org.example.activemq.orbweaver.api</packagename>
                   <schemaPackagenames>
                     <schemaPackagename>http://activemq.example.org/orbweaver=org.example.activemq.orbweaver.api</schemaPackagename>
@@ -166,7 +166,7 @@
               <wadlOptions>
                 <wadlOption>
                   <wadl>${basedir}/src/main/resources/wadl/orbweaver-cc.wadl</wadl>
-                  <impl>true</impl>
+                  <impl>false</impl>
                   <packagename>org.example.activemq.orbweaver.api</packagename>
                   <schemaPackagenames>
                     <schemaPackagename>http://activemq.example.org/orbweaver=org.example.activemq.orbweaver.api</schemaPackagename>

@@ -21,8 +21,15 @@
     attributeFormDefault="unqualified" elementFormDefault="unqualified" 
     targetNamespace="http://activemq.example.org/orbweaver" xmlns:tns="http://activemq.example.org/orbweaver">
 
-  <xs:element name="node" type="tns:nodeType" />
-  <xs:complexType name="nodeType">
+  <xs:element name="brokers" type="tns:brokersType" />
+  <xs:complexType name="brokersType">
+    <xs:sequence>
+      <xs:element ref="tns:broker" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:element name="broker" type="tns:brokerType" />
+  <xs:complexType name="brokerType">
     <xs:sequence>
       <xs:element name="id" type="xs:string" />
       <xs:element name="name" type="xs:string" />
@@ -46,5 +53,6 @@
       <xs:element name="id" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+
 
 </xs:schema>
