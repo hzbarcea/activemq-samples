@@ -162,9 +162,9 @@
                   <schemaPackagenames>
                     <schemaPackagename>http://activemq.example.org/orbweaver=org.example.activemq.orbweaver.api</schemaPackagename>
                   </schemaPackagenames>
-                  <!-- bindingFiles>
+                  <bindingFiles>
                     <bindingFile>${basedir}/src/main/resources/wadl/orbweaver-cc.xjb</bindingFile>
-                  </bindingFiles -->
+                  </bindingFiles>
                 </wadlOption>
               </wadlOptions>
             </configuration>

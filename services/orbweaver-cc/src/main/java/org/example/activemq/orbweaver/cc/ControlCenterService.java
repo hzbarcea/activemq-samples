@@ -2,8 +2,8 @@
  */
 package org.example.activemq.orbweaver.cc;
 
-import org.example.activemq.orbweaver.api.BrokerType;
-import org.example.activemq.orbweaver.api.BrokersType;
+import org.example.activemq.orbweaver.api.Broker;
+import org.example.activemq.orbweaver.api.Brokers;
 import org.example.activemq.orbweaver.api.ControlCenter;
 
 
@@ -13,27 +13,27 @@ import org.example.activemq.orbweaver.api.ControlCenter;
 public class ControlCenterService implements ControlCenter {
 	// Dummy implementation to test service connectivity
 
-	public BrokersType showBrokers() {
-		BrokerType broker;
-		BrokersType answer = new BrokersType();
+	public Brokers showBrokers() {
+		Broker broker;
+		Brokers answer = new Brokers();
 
-		broker = new BrokerType();
+		broker = new Broker();
 		broker.setId("abcd");
-		answer.getBroker().add(broker);
-		broker = new BrokerType();
+		answer.getBrokers().add(broker);
+		broker = new Broker();
 		broker.setId("1234");
-		answer.getBroker().add(broker);
+		answer.getBrokers().add(broker);
 
 		return answer;
 	}
 
-	public BrokerType showBroker(String brokerid) {
-		BrokerType answer = new BrokerType();
+	public Broker showBroker(String brokerid) {
+		Broker answer = new Broker();
 		answer.setId("abcd");
 		return answer;
 	}
 
-	public void updateBroker(String brokerid, BrokerType brokertype) {
+	public void updateBroker(String brokerid, Broker brokertype) {
 		// TODO Auto-generated method stub
 		
 	}
