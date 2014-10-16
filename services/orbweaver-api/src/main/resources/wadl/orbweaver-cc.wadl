@@ -30,7 +30,9 @@
       <resource path="brokers">
         <method name="GET" id="showBrokers">
           <response>
+            <representation mediaType="application/*+json" name="ow:brokers" />
             <representation mediaType="application/json" element="ow:brokers" />
+            <representation mediaType="application/xml" element="ow:brokers" />
           </response>
         </method>
       </resource>
@@ -40,13 +42,17 @@
 
         <method name="GET" id="showBroker">
           <response>
+            <representation mediaType="application/*+json" element="ow:broker" />
             <representation mediaType="application/json" element="ow:broker" />
+            <representation mediaType="application/xml" element="ow:broker" />
           </response>
         </method>
 
         <method name="PUT" id="updateBroker">
           <request>
+            <representation mediaType="application/*+json" element="ow:broker" />
             <representation mediaType="application/json" element="ow:broker" />
+            <representation mediaType="application/xml" element="ow:broker" />
           </request>
         </method>
 

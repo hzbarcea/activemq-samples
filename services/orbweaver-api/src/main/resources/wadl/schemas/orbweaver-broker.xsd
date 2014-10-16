@@ -19,7 +19,8 @@
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
     attributeFormDefault="unqualified" elementFormDefault="unqualified" 
-    targetNamespace="http://activemq.example.org/orbweaver" xmlns:tns="http://activemq.example.org/orbweaver">
+    targetNamespace="http://activemq.example.org/orbweaver" 
+    xmlns:tns="http://activemq.example.org/orbweaver">
 
   <xs:element name="brokers" type="tns:brokersType" />
   <xs:complexType name="brokersType">

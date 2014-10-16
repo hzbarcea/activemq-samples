@@ -30,7 +30,6 @@
              http://cxf.apache.org/blueprint/core http://cxf.apache.org/schemas/blueprint/core.xsd
              ">
 
-
     <cxf:bus>
         <cxf:features>
             <cxf:logging/>
