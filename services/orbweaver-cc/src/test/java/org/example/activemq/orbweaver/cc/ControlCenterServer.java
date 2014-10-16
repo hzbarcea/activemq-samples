@@ -2,6 +2,9 @@
  */
 package org.example.activemq.orbweaver.cc;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.ws.rs.ext.RuntimeDelegate;
 
 import org.apache.cxf.endpoint.Server;
@@ -18,8 +21,13 @@ public class ControlCenterServer {
         ControlCenterApp application = new ControlCenterApp();
         RuntimeDelegate delegate = RuntimeDelegate.getInstance();
 
+        Map<Object, Object> mappings = new HashMap<Object, Object>();
+        mappings.put("json", "application/json");
+        mappings.put("xml", "application/xml");
+        
         JAXRSServerFactoryBean bean = delegate.createEndpoint(application, JAXRSServerFactoryBean.class);
         bean.setAddress("http://localhost:9000/services" + bean.getAddress());
+        bean.setExtensionMappings(mappings);
         server = bean.create();
         server.start();
     }
