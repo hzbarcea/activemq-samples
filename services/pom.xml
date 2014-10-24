@@ -40,6 +40,8 @@
   <modules>
     <module>orbweaver-api</module>
     <module>orbweaver-cc</module>
+    <module>orbweaver-mesh</module>
+    <module>orbweaver-rexster</module>
   </modules>
 
   <profiles>
