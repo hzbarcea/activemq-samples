@@ -18,7 +18,7 @@
     * under the License.
 -->
 <assembly>
-    <!-- id typically identifies the "type" (src vs bin etc) of the assembly -->
+    <!-- id typically identifies the "type" (e.g. src vs bin) of the assembly -->
     <id>bin</id>
     <includeBaseDirectory>false</includeBaseDirectory>
     <formats>
@@ -54,8 +54,8 @@
             <directoryMode>755</directoryMode>
         </fileSet>
         <fileSet>
-            <directory>src/main/resources/release/etc</directory>
-            <outputDirectory>orbweaver-mesh-${orbweaver.version}/etc</outputDirectory>
+            <directory>src/main/resources/release/config</directory>
+            <outputDirectory>orbweaver-mesh-${orbweaver.version}/config</outputDirectory>
             <includes>
                 <include>**/*.xml</include>
             </includes>
